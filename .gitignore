@@ -4,6 +4,7 @@ objects
 a.out*
 megaphone
 eighties
+transactions
 # libraries
 *.a
 *.dylib

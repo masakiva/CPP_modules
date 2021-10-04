@@ -1,24 +1,29 @@
-#include "eighties.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   search_contact.cpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/04 16:57:08 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/10/04 16:57:10 by mvidal-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-std::string	truncate(std::string str, size_t width)
-{
-    if (str.length() > width)
-		return (str.substr(0, width - 1) + ".");
-	return (str);
-}
+#include "eighties.hpp"
 
 void		search_contact(Contact contacts[8])
 {
 	int		i;
 	int		input;
 
-	if (contacts[0].filled == 0)
+	if (!contacts[0].check_if_filled())
 	{
 		std::cout << "Error: phonebook empty" << std::endl;
 		return ;
 	}
 	i = 0;
-	while (contacts[i].filled == 1)
+	while (contacts[i].check_if_filled())
 	{
 		std::cout << std::setw(10) << i + 1;
 		std::cout << "|";

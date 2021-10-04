@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 13:58:12 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/04 16:25:52 by mvidal-a         ###   ########.fr       */
+/*   Created: 2021/10/04 17:29:00 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/10/04 19:13:40 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
+#ifndef __PHONEBOOK_CLASS_HPP__
+# define __PHONEBOOK_CLASS_HPP__
 
-char	*upperify(char *str)
+class Phonebook
 {
-	int		i;
+	public:
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		str[i] = toupper(str[i]);
-		i++;
-	}
-	return (str);
-}
+		Phonebook(void);
+		~Phonebook(void);
 
-int		main(int argc, char **argv)
-{
-	int		i;
-	
-	if (argc > 1)
-	{
-		i = 1;
-		while (i < argc)
-			std::cout << upperify(argv[i++]);
-	}
-	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << std::endl;
-	return (EXIT_SUCCESS);
-}
+	private:
+
+		Contact		_contacts[8];
+
+};
+
+#endif /*__PHONEBOOK_CLASS_HPP__*/
