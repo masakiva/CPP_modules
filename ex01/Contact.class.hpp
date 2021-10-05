@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:14:35 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/04 18:11:44 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/05 19:01:33 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ class Contact
 		Contact(void);
 		~Contact(void);
 
-		bool	get_filled(void) const;
+		bool	get_isfilled(void) const;
 		void	fill_fields(void);
 		void	print_fields(void) const;
-		std::string	truncate_field(std::string str) const;
+		void	print_contact_summary(int index) const;
 
 	private:
 
-		int				_filled;
+		int				_isfilled;
 
 		std::string		_first_name;
 		std::string		_last_name;
@@ -35,6 +35,7 @@ class Contact
 		std::string		_phone_number;
 		std::string		_darkest_secret;
 
+		static std::string	_truncate_field(std::string field);
 };
 
 #endif /*CONTACT_CLASS_HPP*/

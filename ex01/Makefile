@@ -3,8 +3,7 @@ NAME		+= eighties
 SRCS_DIR	+= ./
 
 SRCS		+= eighties.cpp
-SRCS		+= add_contact.cpp
-SRCS		+= search_contact.cpp
+SRCS		+= Phonebook.class.cpp
 SRCS		+= Contact.class.cpp
 
 vpath %.c $(SRCS_DIR)
@@ -12,6 +11,7 @@ vpath %.c $(SRCS_DIR)
 HDRS_DIR	= ./
 
 HDRS		+= eighties.hpp
+HDRS		+= Phonebook.class.hpp
 HDRS		+= Contact.class.hpp
 
 vpath %.h $(HDRS_DIR)
