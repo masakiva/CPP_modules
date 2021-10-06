@@ -6,12 +6,15 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:14:35 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/05 19:01:33 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:20:38 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
+
+# include <iostream>
+# include <iomanip>
 
 class Contact
 {

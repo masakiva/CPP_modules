@@ -6,12 +6,10 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:19:23 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/05 19:03:54 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:12:12 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
 #include "Contact.class.hpp"
 
 void	protected_cin(std::string *str);

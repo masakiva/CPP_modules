@@ -6,15 +6,16 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:56:51 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/05 19:05:21 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:36:24 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Phonebook.class.hpp" 
 
 Phonebook::Phonebook(void)
 {
+	std::cout << "Phonebook opened! You can ADD a contact, "
+		<< "then SEARCH for them, or EXIT the program." << std::endl;
 	return ;
 }
 

@@ -6,15 +6,15 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:56:57 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/05 18:50:06 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:46:27 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "eighties.hpp"
+#include "Phonebook.class.hpp"
 
 void	protected_cin(std::string *str)
 {
-	std::cin >> *str;
+	getline(std::cin, *str);
 	if (std::cin.eof())
 		exit(EXIT_SUCCESS);
  	else if (std::cin.fail())
