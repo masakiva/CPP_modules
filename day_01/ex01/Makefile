@@ -1,11 +1,10 @@
-NAME		+= BraiiiiiiinnnzzzZ
+NAME		+= moarbrainz
 
 SRCS_DIR	+= ./
 
 SRCS		+= main.cpp
 SRCS		+= Zombie.cpp
-SRCS		+= newZombie.cpp
-SRCS		+= randomChump.cpp
+SRCS		+= ZombieHorde.cpp
 
 vpath %.c $(SRCS_DIR)
 
