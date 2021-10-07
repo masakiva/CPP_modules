@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 15:09:03 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/07 16:06:41 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/07 16:29:04 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanB
 		HumanB( std::string const name );
 		~HumanB( void );
 
-		void	setWeapon( Weapon *weapon );
+		void	setWeapon( Weapon &weapon );
 		void	attack( void ) const;
 
 	private:
