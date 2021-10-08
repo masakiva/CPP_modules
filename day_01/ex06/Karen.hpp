@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 20:06:26 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/08 11:08:10 by mvidal-a         ###   ########.fr       */
+/*   Created: 2021/10/07 20:03:20 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/10/07 20:15:22 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
-#include <cstdlib> // EXIT_SUCCESS
+#ifndef __KAREN_H__
+# define __KAREN_H__
 
-int		main( void )
+# include <iostream> // std::cout
+
+class Karen
 {
-	Karen	k;
+	public:
 
-	k.complain("DEBUG");
-	k.complain("INFO");
-	k.complain("WARNING");
-	k.complain("ERROR");
-	k.complain("RANDOM");
+		void	complain( std::string level ) const;
 
-	return (EXIT_SUCCESS);
-}
+	private:
+
+		void	_debug( void ) const;
+		void	_info( void ) const;
+		void	_warning( void ) const;
+		void	_error( void ) const;
+};
+
+#endif /* __KAREN_H__ */
