@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:25:21 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/11 18:47:34 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/12 10:55:54 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Fixed
 	private:
 
 		int					_rawBits;
-		static const int	_nbFracBits = 8;
+		static const int	_nbFracBits;
 
 };
 

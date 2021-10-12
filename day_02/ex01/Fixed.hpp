@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:25:21 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/11 19:02:15 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/12 13:20:22 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,20 @@ class Fixed
 		
 		Fixed &	operator=( Fixed const &rhs );
 
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
+		int			getRawBits( void ) const;
+		void		setRawBits( int const raw );
+		static int	getNbFracBits( void );
 
-		float	toFloat( void ) const;
-		int		toInt( void ) const;
+		float		toFloat( void ) const;
+		int			toInt( void ) const;
 
 	private:
 
 		int					_rawBits;
-		static const int	_nbFracBits = 8;
+		static const int	_nbFracBits;
 
 };
+
+std::ostream &	operator<<( std::ostream &o, Fixed const &rhs );
 
 #endif // __FIXED_HPP__

@@ -6,11 +6,13 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:35:12 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/11 18:49:39 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:42:06 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int	Fixed::_nbFracBits = 8;
 
 Fixed::Fixed( void )
 {
@@ -31,10 +33,11 @@ Fixed::Fixed( Fixed const &src )
 Fixed::~Fixed( void )
 {
 	std::cout << "Destructor called" << std::endl;
+
 	return ;
 }
 
-Fixed &		Fixed::operator=( Fixed const &rhs)
+Fixed &		Fixed::operator=( Fixed const &rhs )
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->_rawBits = rhs.getRawBits();
@@ -45,6 +48,7 @@ Fixed &		Fixed::operator=( Fixed const &rhs)
 int			Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
+
 	return ( this->_rawBits );
 }
 
