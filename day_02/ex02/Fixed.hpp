@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:25:21 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/12 18:06:50 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:38:57 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,35 @@ class Fixed
 		Fixed( const float f );
 		~Fixed( void );
 		
-		Fixed &	operator=( Fixed const &rhs );
-		bool	operator>( Fixed const &rhs ) const;
-		bool	operator<( Fixed const &rhs ) const;
-		bool	operator>=( Fixed const &rhs ) const;
-		bool	operator<=( Fixed const &rhs ) const;
-		bool	operator==( Fixed const &rhs ) const;
-		bool	operator!=( Fixed const &rhs ) const;
+		Fixed &		operator=( Fixed const &rhs );
 
-		Fixed	operator+( Fixed const &rhs ) const;
-		Fixed	operator-( Fixed const &rhs ) const;
-		Fixed	operator*( Fixed const &rhs ) const;
-		Fixed	operator/( Fixed const &rhs ) const;
+		bool		operator>( Fixed const &rhs ) const;
+		bool		operator<( Fixed const &rhs ) const;
+		bool		operator>=( Fixed const &rhs ) const;
+		bool		operator<=( Fixed const &rhs ) const;
+		bool		operator==( Fixed const &rhs ) const;
+		bool		operator!=( Fixed const &rhs ) const;
 
-		int			getRawBits( void ) const;
-		void		setRawBits( int const raw );
-		static int	getNbFracBits( void );
+		Fixed		operator+( Fixed const &rhs ) const;
+		Fixed		operator-( Fixed const &rhs ) const;
+		Fixed		operator*( Fixed const &rhs ) const;
+		Fixed		operator/( Fixed const &rhs ) const;
 
-		float		toFloat( void ) const;
-		int			toInt( void ) const;
+		Fixed &		operator++( void );
+		Fixed &		operator--( void );
+		Fixed		operator++( int );
+		Fixed		operator--( int );
+
+		static Fixed &			min( Fixed &a, Fixed &b );
+		static Fixed &			max( Fixed &a, Fixed &b );
+		static const Fixed &	min( Fixed const &a, Fixed const &b );
+		static const Fixed &	max( Fixed const &a, Fixed const &b );
+
+		int				getRawBits( void ) const;
+		void			setRawBits( int const raw );
+
+		float			toFloat( void ) const;
+		int				toInt( void ) const;
 
 	private:
 

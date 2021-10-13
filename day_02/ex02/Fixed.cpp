@@ -6,18 +6,17 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:35:12 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/12 18:07:59 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/13 17:11:13 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
+#include <cmath> // roundf
 
 const int	Fixed::_nbFracBits = 8;
 
 Fixed::Fixed( void )
 {
-	std::cout << "Default constructor called" << std::endl;
 	this->_rawBits = 0;
 
 	return ;
@@ -25,7 +24,6 @@ Fixed::Fixed( void )
 
 Fixed::Fixed( Fixed const &src )
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 
 	return ;
@@ -33,7 +31,6 @@ Fixed::Fixed( Fixed const &src )
 
 Fixed::Fixed( const int i )
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->_rawBits = i << Fixed::_nbFracBits;
 
 	return ;
@@ -41,21 +38,17 @@ Fixed::Fixed( const int i )
 
 Fixed::Fixed( const float f )
 {
-	std::cout << "Float constructor called" << std::endl;
-	this->_rawBits = (int)roundf(f * (1 << Fixed::_nbFracBits));
+	this->_rawBits = (int)roundf( f * (1 << Fixed::_nbFracBits ));
 	return ;
 }
 
 Fixed::~Fixed( void )
 {
-	std::cout << "Destructor called" << std::endl;
-
 	return ;
 }
 
 Fixed &		Fixed::operator=( Fixed const &rhs )
 {
-	std::cout << "Assignation operator called" << std::endl;
 	this->_rawBits = rhs.getRawBits();
 
 	return ( *this );
@@ -63,52 +56,130 @@ Fixed &		Fixed::operator=( Fixed const &rhs )
 
 bool		Fixed::operator>( Fixed const &rhs ) const
 {
-	return ( this->toFloat() > rhs.toFloat() );
+	return ( this->_rawBits > rhs.getRawBits() );
 }
 
 bool		Fixed::operator<( Fixed const &rhs ) const
 {
-	return ( this->toFloat() < rhs.toFloat() );
+	return ( this->_rawBits < rhs.getRawBits() );
 }
 
 bool		Fixed::operator>=( Fixed const &rhs ) const
 {
-	return ( this->toFloat() >= rhs.toFloat() );
+	return ( this->_rawBits >= rhs.getRawBits() );
 }
 
 bool		Fixed::operator<=( Fixed const &rhs ) const
 {
-	return ( this->toFloat() <= rhs.toFloat() );
+	return ( this->_rawBits <= rhs.getRawBits() );
 }
 
 bool		Fixed::operator==( Fixed const &rhs ) const
 {
-	return ( this->toFloat() == rhs.toFloat() );
+	return ( this->_rawBits == rhs.getRawBits() );
 }
 
 bool		Fixed::operator!=( Fixed const &rhs ) const
 {
-	return ( this->toFloat() != rhs.toFloat() );
+	return ( this->_rawBits != rhs.getRawBits() );
 }
 
 Fixed		Fixed::operator+( Fixed const &rhs ) const
 {
-	return ( Fixed( this->toFloat() + rhs.toFloat() ) );
+	Fixed	res;
+	
+	res.setRawBits( this->_rawBits + rhs.getRawBits() );
+
+	return (res);
 }
 
 Fixed		Fixed::operator-( Fixed const &rhs ) const
 {
-	return ( Fixed( this->toFloat() - rhs.toFloat() ) );
+	Fixed	res;
+	
+	res.setRawBits( this->_rawBits - rhs.getRawBits() );
+
+	return (res);
 }
 
 Fixed		Fixed::operator*( Fixed const &rhs ) const
 {
-	return ( Fixed( this->toFloat() * rhs.toFloat() ) );
+	Fixed	res;
+	
+	res.setRawBits( (this->_rawBits * rhs.getRawBits()) >> Fixed::_nbFracBits );
+
+	return (res);
 }
 
 Fixed		Fixed::operator/( Fixed const &rhs ) const
 {
-	return ( Fixed( this->toFloat() / rhs.toFloat() ) );
+	Fixed	res;
+	
+	res.setRawBits( (this->_rawBits << Fixed::_nbFracBits) / rhs.getRawBits() );
+
+	return (res);
+}
+
+Fixed &		Fixed::operator++( void )
+{
+	this->_rawBits++;
+
+	return ( *this );
+}
+
+Fixed &		Fixed::operator--( void )
+{
+	this->_rawBits--;
+
+	return ( *this );
+}
+
+Fixed		Fixed::operator++( int )
+{
+	Fixed	before_inc( *this );
+	this->_rawBits++;
+
+	return ( before_inc );
+}
+
+Fixed		Fixed::operator--( int )
+{
+	Fixed	before_dec( *this );
+	this->_rawBits--;
+
+	return ( before_dec );
+}
+
+Fixed &		Fixed::min( Fixed &a, Fixed &b )
+{
+	if ( a <= b )
+		return ( a );
+	else
+		return ( b );
+}
+
+Fixed &		Fixed::max( Fixed &a, Fixed &b )
+{
+	if ( a >= b )
+		return ( a );
+	else
+		return ( b );
+}
+
+const Fixed &	Fixed::min( Fixed const &a, Fixed const &b )
+{
+	if ( a <= b )
+		return ( a );
+	else
+		return ( b );
+}
+
+const Fixed &	Fixed::max( Fixed const &a, Fixed const &b )
+{
+	if ( a >= b )
+		return ( a );
+	else
+		return ( b );
 }
 
 int			Fixed::getRawBits( void ) const
@@ -121,11 +192,6 @@ void		Fixed::setRawBits( int const raw )
 	this->_rawBits = raw;
 
 	return ;
-}
-
-int			Fixed::getNbFracBits( void )
-{
-	return ( Fixed::_nbFracBits );
 }
 
 float		Fixed::toFloat( void ) const

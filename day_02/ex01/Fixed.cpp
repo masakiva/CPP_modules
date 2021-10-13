@@ -6,12 +6,12 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:35:12 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/12 17:09:56 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:48:37 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
+#include <cmath> // roundf
 
 const int	Fixed::_nbFracBits = 8;
 
@@ -42,7 +42,7 @@ Fixed::Fixed( const int i )
 Fixed::Fixed( const float f )
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_rawBits = (int)roundf(f * (1 << Fixed::_nbFracBits));
+	this->_rawBits = (int)roundf( f * (1 << Fixed::_nbFracBits ));
 	return ;
 }
 
