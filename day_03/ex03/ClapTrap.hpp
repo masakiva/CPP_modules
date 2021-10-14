@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 23:36:47 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/14 18:15:08 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/14 18:20:46 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class ClapTrap
 		void	takeDamage( unsigned int amount );
 		void	beRepaired( unsigned int amount );
 
-	private:
+	protected:
 
 		std::string		_name;
 		int				_hitPoints;

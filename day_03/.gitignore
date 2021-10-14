@@ -3,6 +3,9 @@
 objects
 a.out*
 ClapTrap
+ScavTrap
+FragTrap
+DiamondTrap
 # libraries
 *.a
 *.dylib
