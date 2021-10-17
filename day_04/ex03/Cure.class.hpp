@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.class.hpp                                      :+:      :+:    :+:   */
+/*   Cure.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 16:15:16 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:35:07 by mvidal-a         ###   ########.fr       */
+/*   Created: 2021/10/17 16:04:13 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/10/17 17:02:06 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DOG_HPP__
-# define __DOG_HPP__
+#ifndef __CURE_CLASS_HPP__
+# define __CURE_CLASS_HPP__
 
-# include "Animal.class.hpp"
-# include "Brain.class.hpp"
+# include "AMateria.abstractclass.hpp"
 
-class Dog : public Animal
+class Cure : public AMateria
 {
 	public:
 
-		Dog( void );
-		Dog( const Dog &src );
-		~Dog( void );
+		Cure( void );
+		Cure( const Cure & src );
+		~Cure( void );
 
-		void *	getBrain( void ) const;
+		AMateria*	clone( void ) const;
+		void		use( ICharacter& target );
 
-		void	makeSound( void ) const;
+}
 
-	private:
-
-		Brain	*_brain;
-
-};
-
-#endif // __DOG_HPP__
+#endif // __CURE_CLASS_HPP__

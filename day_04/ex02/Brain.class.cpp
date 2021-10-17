@@ -1,61 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.cpp                                   :+:      :+:    :+:   */
+/*   Brain.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:16:52 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:34:54 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/15 19:06:38 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.class.hpp"
+#include "Brain.class.hpp"
 
-Animal::Animal( void )
+Brain::Brain( void )
 {
-	std::cout << "Animal created" << std::endl;
+	std::cout << "Brain created" << std::endl;
 
 	return ;
 }
 
-Animal::Animal( const Animal &src )
+Brain::Brain( const Brain &src )
 {
 	*this = src;
-	std::cout << "Animal created" << std::endl;
+	std::cout << "Brain created" << std::endl;
 
 	return ;
 }
 
-Animal::~Animal( void )
+Brain::~Brain( void )
 {
-	std::cout << "Animal destroyed" << std::endl;
+	std::cout << "Brain destroyed" << std::endl;
 
 	return ;
 }
 
 
-Animal &	Animal::operator=( const Animal &rhs )
+Brain &	Brain::operator=( const Brain &rhs )
 {
 	if ( this == &rhs )
 		return ( *this );
 
-	this->type = rhs.type;
-
 	return ( *this );
-}
-
-std::string	Animal::getType( void ) const
-{
-	return ( this->type );
-}
-
-void *		Animal::getBrain( void ) const
-{
-	return ( NULL );
-}
-
-void		Animal::makeSound( void ) const
-{
-	return ;
 }

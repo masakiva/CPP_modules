@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.class.hpp                                      :+:      :+:    :+:   */
+/*   ICharacter.interface.hpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 16:15:16 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:35:07 by mvidal-a         ###   ########.fr       */
+/*   Created: 2021/10/17 16:10:10 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/10/17 17:01:04 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DOG_HPP__
-# define __DOG_HPP__
+#ifndef __ICHARACTER_INTERFACE_HPP__
+# define __ICHARACTER_INTERFACE_HPP__
 
-# include "Animal.class.hpp"
-# include "Brain.class.hpp"
-
-class Dog : public Animal
+class ICharacter
 {
 	public:
 
-		Dog( void );
-		Dog( const Dog &src );
-		~Dog( void );
+		virtual		~ICharacter( void ) {}
 
-		void *	getBrain( void ) const;
+		virtual std::string const &		getName( void ) const = 0;
+		virtual void					equip( AMateria* m ) = 0;
+		virtual void					unequip( int idx ) = 0;
+		virtual void					use( int idx, ICharacter& target ) = 0;
 
-		void	makeSound( void ) const;
+}
 
-	private:
-
-		Brain	*_brain;
-
-};
-
-#endif // __DOG_HPP__
+#endif // __ICHARACTER_INTERFACE_HPP__

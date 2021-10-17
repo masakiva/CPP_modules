@@ -1,61 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.cpp                                   :+:      :+:    :+:   */
+/*   AMateria.abstractclass.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 13:16:52 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:34:54 by mvidal-a         ###   ########.fr       */
+/*   Created: 2021/10/17 16:18:57 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/10/17 17:01:39 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.class.hpp"
+#include "AMateria.abstractclass.hpp"
 
-Animal::Animal( void )
+AMateria::AMateria( void )
 {
-	std::cout << "Animal created" << std::endl;
-
 	return ;
 }
 
-Animal::Animal( const Animal &src )
+AMateria::AMateria( const std::string & type ) : _type(type)
+{
+	return ;
+}
+
+AMateria::AMateria( const AMateria & src )
 {
 	*this = src;
-	std::cout << "Animal created" << std::endl;
 
 	return ;
 }
 
-Animal::~Animal( void )
+AMateria::~AMateria( void )
 {
-	std::cout << "Animal destroyed" << std::endl;
-
 	return ;
 }
 
-
-Animal &	Animal::operator=( const Animal &rhs )
+AMateria&			AMateria::operator=( const AMateria & rhs )
 {
 	if ( this == &rhs )
 		return ( *this );
 
-	this->type = rhs.type;
+	this->_type = rhs._type;
 
 	return ( *this );
 }
 
-std::string	Animal::getType( void ) const
+std::string const &	AMateria::getType( void ) const
 {
-	return ( this->type );
+	return ( this->_type );
 }
 
-void *		Animal::getBrain( void ) const
-{
-	return ( NULL );
-}
-
-void		Animal::makeSound( void ) const
+void				AMateria::use( ICharacter& target )
 {
 	return ;
 }

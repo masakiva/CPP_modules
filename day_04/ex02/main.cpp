@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:19:26 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:37:19 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/17 16:39:10 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int		main( void )
 {
 	Animal		*animals[4];
 	int			i;
+
+	Animal		wrongAnimal;
 
 	for ( i = 0; i < 2; i++ )
 	{

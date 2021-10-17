@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.class.hpp                                      :+:      :+:    :+:   */
+/*   Brain.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 16:15:16 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:35:07 by mvidal-a         ###   ########.fr       */
+/*   Created: 2021/10/15 13:21:49 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/10/15 19:26:24 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DOG_HPP__
-# define __DOG_HPP__
+#ifndef __BRAIN_HPP__
+# define __BRAIN_HPP__
 
-# include "Animal.class.hpp"
-# include "Brain.class.hpp"
+# include <iostream>
 
-class Dog : public Animal
+class Brain
 {
 	public:
 
-		Dog( void );
-		Dog( const Dog &src );
-		~Dog( void );
+		Brain( void );
+		Brain( const Brain &src );
+		~Brain( void );
 
-		void *	getBrain( void ) const;
-
-		void	makeSound( void ) const;
+		Brain &	operator=( const Brain &rhs );
 
 	private:
 
-		Brain	*_brain;
+		std::string		_ideas[100];
 
 };
 
-#endif // __DOG_HPP__
+#endif // __BRAIN_HPP__

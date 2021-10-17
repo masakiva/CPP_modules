@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:16:52 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:34:54 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/17 16:38:58 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,6 @@ Animal &	Animal::operator=( const Animal &rhs )
 std::string	Animal::getType( void ) const
 {
 	return ( this->type );
-}
-
-void *		Animal::getBrain( void ) const
-{
-	return ( NULL );
 }
 
 void		Animal::makeSound( void ) const
