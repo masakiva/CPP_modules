@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.class.cpp                                :+:      :+:    :+:   */
+/*   MateriaSource.class.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 17:04:02 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/19 15:38:17 by mvidal-a         ###   ########.fr       */
+/*   Created: 2021/10/18 11:51:44 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/10/19 15:35:00 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.class.hpp"
+#include "MateriaSource.class.hpp"
 
-Character::Character( void )
+MateriaSource::MateriaSource( void )
 {
 	for ( int idx = 0; idx < 4; idx++ )
 	{
@@ -22,37 +22,29 @@ Character::Character( void )
 	return ;
 }
 
-Character::Character( const std::string & name ) : _name(name)
-{
-	return ;
-}
-
-Character::Character( const Character & src )
+MateriaSource::MateriaSource( const MateriaSource & src )
 {
 	*this = src;
 
 	return ;
 }
 
-Character::~Character( void )
+MateriaSource::~MateriaSource( void )
 {
 	for ( int idx = 0; idx < 4; idx++ )
 	{
 		if ( this->_materia[idx] != NULL )
-		{
 			delete this->_materia[idx];
-		}
 	}
 
 	return ;
 }
 
-Character&			Character::operator=( const Character & rhs )
+MateriaSource&	MateriaSource::operator=( const MateriaSource & rhs )
 {
 	if ( this == &rhs )
 		return ( *this );
 
-	this->_name = rhs._name;
 	for ( int idx = 0; idx < 4; idx++ )
 	{
 		if ( this->_materia[idx] != NULL )
@@ -72,12 +64,7 @@ Character&			Character::operator=( const Character & rhs )
 	return ( *this );
 }
 
-std::string const &	Character::getName( void ) const
-{
-	return ( this->_name );
-}
-
-void					Character::equip( AMateria* m )
+void			MateriaSource::learnMateria( AMateria* m )
 {
 	int		idx;
 
@@ -93,30 +80,21 @@ void					Character::equip( AMateria* m )
 	else
 	{
 		std::cout << "no more room for materia " << m << " of type \""
-			<< m->getType() << "\" in character \"" << this->_name << "\""
-			<< std::endl;
+			<< m->getType() << "\" in MateriaSource" << std::endl;
 		delete m;
 	}
 
 	return ;
 }
 
-void					Character::unequip( int idx )
+AMateria*	MateriaSource::createMateria( const std::string & type )
 {
-	if ( idx >= 0 && idx < 4 && this->_materia[idx] != NULL )
+	int		idx;
+
+	for ( idx = 0; idx < 4; idx++ )
 	{
-		this->_materia[idx] = NULL;
+		if ( this->_materia[idx]->getType() == type )
+			return ( this->_materia[idx]->clone() );
 	}
-
-	return ;
-}
-
-void					Character::use( int idx, ICharacter& target )
-{
-	if ( idx >= 0 && idx < 4 && this->_materia[idx] != NULL )
-	{
-		this->_materia[idx]->use( target );
-	}
-
-	return ;
+	return ( 0 );
 }

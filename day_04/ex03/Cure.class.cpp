@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:18:57 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 16:55:52 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:49:34 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Cure::~Cure( void )
 
 AMateria*	Cure::clone( void ) const
 {
-	return ( );
+	return ( new Cure() );
 }
 
 void		Cure::use( ICharacter& target )

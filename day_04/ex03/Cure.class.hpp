@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:04:13 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 17:02:06 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/19 14:14:25 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class Cure : public AMateria
 		AMateria*	clone( void ) const;
 		void		use( ICharacter& target );
 
-}
+};
 
 #endif // __CURE_CLASS_HPP__

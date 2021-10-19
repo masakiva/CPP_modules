@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 17:02:22 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 17:17:29 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/19 14:14:17 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ class Character : public ICharacter
 		void					unequip( int idx );
 		void					use( int idx, ICharacter& target );
 
-}
+};
 
 #endif // __CHARACTER_CLASS_HPP__

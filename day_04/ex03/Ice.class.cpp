@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:18:57 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 16:56:10 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:50:05 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Ice::~Ice( void )
 
 AMateria*	Ice::clone( void ) const
 {
-	return ( );
+	return ( new Ice() );
 }
 
 void		Ice::use( ICharacter& target )

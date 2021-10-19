@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:18:57 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 17:01:39 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:37:34 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,10 @@ AMateria&			AMateria::operator=( const AMateria & rhs )
 	if ( this == &rhs )
 		return ( *this );
 
-	this->_type = rhs._type;
-
 	return ( *this );
 }
 
 std::string const &	AMateria::getType( void ) const
 {
 	return ( this->_type );
-}
-
-void				AMateria::use( ICharacter& target )
-{
-	return ;
 }
