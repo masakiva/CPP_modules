@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 23:36:28 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/14 18:16:09 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:08:43 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ ClapTrap::~ClapTrap( void )
 
 ClapTrap &	ClapTrap::operator=( ClapTrap const &rhs )
 {
-	if (this == &rhs)
+	if ( this == &rhs )
 		return ( *this );
 
 	this->_name = rhs._name;
