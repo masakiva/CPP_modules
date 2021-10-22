@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:19:26 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:37:19 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/22 11:14:17 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,16 @@ int		main( void )
 	{
 		delete animals[i];
 	}
+
+	std::cout << std::endl;
+
+
+	Cat			cats[2];
+
+	cats[1] = cats[0];
+	std::cout << "Brain pointer value for cats[0] = " << cats[0].getBrain()
+		<< std::endl << "....................for cats[2] = "
+		<< cats[1].getBrain() << std::endl;
 
 	return ( EXIT_SUCCESS );
 }

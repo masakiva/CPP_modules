@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:16:52 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:34:54 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:32:11 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ Animal::~Animal( void )
 
 Animal &	Animal::operator=( const Animal &rhs )
 {
+	std::cout << "animal assign op called" << std::endl;
 	if ( this == &rhs )
 		return ( *this );
 

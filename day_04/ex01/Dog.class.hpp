@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:15:16 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:35:07 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/22 11:16:50 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ class Dog : public Animal
 		Dog( const Dog &src );
 		~Dog( void );
 
-		void *	getBrain( void ) const;
+		Dog&	operator=( const Dog& rhs );
+
+		void*	getBrain( void ) const;
 
 		void	makeSound( void ) const;
 
 	private:
 
-		Brain	*_brain;
+		Brain*	_brain;
 
 };
 

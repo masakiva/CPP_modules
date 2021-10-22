@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:21:49 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/17 15:34:49 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:36:21 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
 		Animal( const Animal &src );
 		virtual ~Animal( void );
 
-		Animal &	operator=( const Animal &rhs );
+		virtual Animal&	operator=( const Animal &rhs );
 
 		std::string		getType( void ) const;
 		virtual void *	getBrain( void ) const;
