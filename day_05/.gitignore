@@ -2,6 +2,7 @@
 *.o
 objects
 a.out*
+crats
 # libraries
 *.a
 *.dylib
