@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:19:49 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/22 17:03:46 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/23 15:38:24 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ Form::Form( void ) :
 }
 
 Form::Form( const std::string name, const int signRequiredGrade,
-		const int execRequiredGrade) :
+		const int execRequiredGrade, std::string target ) :
 	_name(name),
 	_signRequiredGrade(signRequiredGrade),
-	_execRequiredGrade(execRequiredGrade)
+	_execRequiredGrade(execRequiredGrade),
+	_target(target)
 {
 	this->_sign = false;
 	try
@@ -62,6 +63,7 @@ Form&		Form::operator=( const Form & rhs )
 		return ( *this );
 
 	this->_sign = rhs._sign;
+	this->_target = rhs._target;
 	
 	return ( *this );
 }
@@ -84,6 +86,11 @@ int				Form::getSignRequiredGrade( void ) const
 int				Form::getExecRequiredGrade( void ) const
 {
 	return ( this->_execRequiredGrade );
+}
+
+std::string		Form::getTarget( void ) const
+{
+	return ( this->_target );
 }
 
 std::ostream &	operator<<( std::ostream & o, const Form & rhs )
@@ -129,9 +136,8 @@ const char*		Form::NotSignedException::what() const throw()
 	return ( "Error: form not signed" );
 }
 
-bool			Form::execute( const Bureaucrat& executor ) const
+bool			Form::executeChecks( const Bureaucrat& executor ) const
 {
-	std::cout << "execute Form" << std::endl;
 	try
 	{
 		if ( ! this->_sign )

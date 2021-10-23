@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 15:52:59 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/22 16:58:19 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/23 12:51:05 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	PresidentialPardonForm : public Form
 		PresidentialPardonForm( const PresidentialPardonForm& src );
 		~PresidentialPardonForm( void );
 
-		void	executeAction( const Bureaucrat& executor ) const;
+		bool	execute( const Bureaucrat& executor ) const;
 
 };
 

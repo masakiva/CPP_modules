@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 12:31:14 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/22 17:03:31 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/23 16:54:00 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ class	Form
 		bool				_sign;
 		const int			_signRequiredGrade;
 		const int			_execRequiredGrade;
+		std::string			_target;
 
 	public:
 
 		Form( void );
 		Form( const std::string name, const int signRequiredGrade,
-				const int execRequiredGrade);
+				const int execRequiredGrade, std::string target );
 		Form( const Form& src );
 		~Form( void );
 
@@ -40,10 +41,11 @@ class	Form
 		bool			getSign( void ) const;
 		int				getSignRequiredGrade( void ) const;
 		int				getExecRequiredGrade( void ) const;
+		std::string		getTarget( void ) const;
 
 		bool			beSigned( Bureaucrat& crat );
-		bool			execute( const Bureaucrat& executor ) const;
-		virtual void	executeAction( const Bureaucrat& executor ) const = 0;
+		virtual bool	execute( const Bureaucrat& executor ) const = 0;
+		bool			executeChecks( const Bureaucrat& executor ) const;
 
 		class	GradeTooHighException : public std::exception
 		{
@@ -60,8 +62,6 @@ class	Form
 			public:
 				virtual const char* what() const throw();
 		};
-
-
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 15:52:59 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/22 16:58:12 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/23 16:40:38 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __ROBOTOMYREQUESTFORM_CLASS_HPP__
 
 # include "Form.class.hpp"
+# include <cstdlib> // srand, rand
 
 class	RobotomyRequestForm : public Form
 {
@@ -24,7 +25,7 @@ class	RobotomyRequestForm : public Form
 		RobotomyRequestForm( const RobotomyRequestForm& src );
 		~RobotomyRequestForm( void );
 
-		void	executeAction( const Bureaucrat& executor ) const;
+		bool	execute( const Bureaucrat& executor ) const;
 
 };
 
