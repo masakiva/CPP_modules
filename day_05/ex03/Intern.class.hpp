@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:57:06 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/24 16:01:22 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/24 16:07:45 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ class	Intern
 
 		Intern&		operator=( const Intern& rhs );
 
-		Form*	makeForm( std::string formName, std::string formTarget );
+		Form*	makeForm( std::string formName, std::string formTarget ) const;
 
 		class	CouldntFindFormException : public std::exception
 		{
 			public:
 				virtual const char*	what() const throw();
 		};
+
 };
 
 #endif // __INTERN_CLASS_HPP

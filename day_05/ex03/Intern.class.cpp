@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:13:05 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/24 16:05:26 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/24 16:07:34 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ Intern&		Intern::operator=( const Intern & rhs )
 }
 
 Form*		Intern::makeForm( std::string formName, std::string formTarget )
+	const
 {
 	Form*			(Intern::*formCalls[3])( std::string target ) const
 		= { &Intern::makeShrubberyCreationForm,
