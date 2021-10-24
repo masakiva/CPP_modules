@@ -8,6 +8,7 @@ SRCS		+= Form.class.cpp
 SRCS		+= PresidentialPardonForm.class.cpp
 SRCS		+= RobotomyRequestForm.class.cpp
 SRCS		+= ShrubberyCreationForm.class.cpp
+SRCS		+= Intern.class.cpp
 
 vpath %.c $(SRCS_DIR)
 
@@ -18,6 +19,7 @@ HDRS		+= Form.class.hpp
 HDRS		+= PresidentialPardonForm.class.hpp
 HDRS		+= RobotomyRequestForm.class.hpp
 HDRS		+= ShrubberyCreationForm.class.hpp
+HDRS		+= Intern.class.hpp
 
 vpath %.h $(HDRS_DIR)
 
