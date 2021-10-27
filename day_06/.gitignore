@@ -2,6 +2,7 @@
 *.o
 objects
 a.out*
+convert
 # libraries
 *.a
 *.dylib
