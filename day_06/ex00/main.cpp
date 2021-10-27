@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:24:43 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/26 18:26:11 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:08:24 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,12 @@ void	display_float( double value )
 
 void	check_decimal( char* arg )
 {
-	https://github.com/Ourobore/CPP-Modules/tree/master/CPP-06/ex00
+	while ( *arg >= '0' && *arg <= '9' )
+	{
+		*arg++;
+	}
+	if ( *arg == '.' )
+
 }
 
 void	display_conversions( char* arg )
