@@ -3,6 +3,8 @@
 objects
 a.out*
 convert
+serial
+real_type
 # libraries
 *.a
 *.dylib

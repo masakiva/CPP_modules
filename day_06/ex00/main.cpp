@@ -6,46 +6,43 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:24:43 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/28 12:10:52 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/28 15:20:13 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib> // EXIT_SUCCESS, EXIT_FAILURE, atof
-#include <limits> // numeric_limits
+#include <climits> // CHAR_MIN, CHAR_MAX, INT_MIN, INT_MAX
+#include <cstring> // strcmp
 
-#define CHAR_MIN_	std::numeric_limits<char>::min()
-#define CHAR_MAX_	std::numeric_limits<char>::max()
-#define INT_MIN_	std::numeric_limits<int>::min()
-#define INT_MAX_	std::numeric_limits<int>::max()
-#define FLOAT_MAX_	std::numeric_limits<float>::max()
-#define FLOAT_MIN_	std::numeric_limits<float>::min()
-
-void	display_char( double double_value )
+void	display_char( double double_value, bool is_nan )
 {
 	char	char_value;
 
-	char_value = static_cast<char>(double_value);
 	std::cout << "char: ";
-	if ( double_value < CHAR_MIN_ || double_value > CHAR_MAX_ )
+	if ( is_nan == true || double_value < CHAR_MIN || double_value > CHAR_MAX )
 	{
 		std::cout << "impossible";
 	}
-	else if ( isprint( char_value ) )
-	{
-		std::cout << char_value;
-	}
 	else
 	{
-		std::cout << "Non displayable";
+		char_value = static_cast<char>(double_value);
+		if ( isprint( char_value ) )
+		{
+			std::cout << char_value;
+		}
+		else
+		{
+			std::cout << "Non displayable";
+		}
 	}
 	std::cout << std::endl;
 }
 
-void	display_int( double double_value )
+void	display_int( double double_value, bool is_nan )
 {
 	std::cout << "int: ";
-	if ( double_value < INT_MIN_ || double_value > INT_MAX_ )
+	if ( is_nan == true || double_value < INT_MIN || double_value > INT_MAX )
 	{
 		std::cout << "impossible";
 	}
@@ -57,23 +54,42 @@ void	display_int( double double_value )
 }
 
 
-void	display_float( double double_value, bool has_decimal )
+void	display_float( double double_value, bool has_decimal, bool is_nan )
 {
-	std::cout << "float: " << static_cast<float>(double_value);
-	if ( ! has_decimal
-			&& double_value < 1000000.0 && double_value > -1000000.0 )
-		std::cout << ".0";
-	ARGGHHHHH if ( double_value >= FLOAT_MIN_ && double_value <= FLOAT_MAX_ )
-		std::cout << "f";
+	std::cout << "float: ";
+	if ( is_nan == true )
+	{
+		std::cout << "nan";
+	}
+	else
+	{
+		std::cout << static_cast<float>(double_value);
+		if ( ! has_decimal
+				&& double_value < 1000000.0 && double_value > -1000000.0 )
+		{
+			std::cout << ".0";
+		}
+	}
+	std::cout << "f";
 	std::cout << std::endl;
 }
 
-void	display_double( double double_value, bool has_decimal )
+void	display_double( double double_value, bool has_decimal, bool is_nan )
 {
-	std::cout << "double: " << double_value;
-	if ( ! has_decimal
-			&& double_value < 1000000.0 && double_value > -1000000.0 )
-		std::cout << ".0";
+	std::cout << "double: ";
+	if ( is_nan == true )
+	{
+		std::cout << "nan";
+	}
+	else
+	{
+		std::cout << double_value;
+		if ( ! has_decimal
+				&& double_value < 1000000.0 && double_value > -1000000.0 )
+		{
+			std::cout << ".0";
+		}
+	}
 	std::cout << std::endl;
 }
 
@@ -91,6 +107,7 @@ bool	check_decimal( char* arg )
 		if ( *arg >= '1' && *arg <= '9' )
 			return ( true );
 	}
+
 	return ( false );
 }
 
@@ -98,15 +115,20 @@ void	display_conversions( char* arg )
 {
 	double	double_value;
 	bool	has_decimal;
+	bool	is_nan;
 
-	double_value = atof(arg);
+	if ( strncmp( arg, "nan", 3 ) == 0 )
+		is_nan = true;
+	else
+		is_nan = false;
+	double_value = atof( arg );
 
-	display_char( double_value );
-	display_int( double_value );
+	display_char( double_value, is_nan );
+	display_int( double_value, is_nan );
 
 	has_decimal = check_decimal( arg );
-	display_float( double_value, has_decimal );
-	display_double( double_value, has_decimal );
+	display_float( double_value, has_decimal, is_nan );
+	display_double( double_value, has_decimal, is_nan );
 }
 
 int		main( int argc, char** argv )

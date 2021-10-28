@@ -1,14 +1,15 @@
-NAME		+= convert
+NAME		+= real_type
 
 SRCS_DIR	+= ./
 
 SRCS		+= main.cpp
+SRCS		+= Base.class.cpp
 
 vpath %.c $(SRCS_DIR)
 
 HDRS_DIR	= ./
 
-#HDRS		+= header.hpp
+HDRS		+= Base.class.hpp
 
 vpath %.h $(HDRS_DIR)
 

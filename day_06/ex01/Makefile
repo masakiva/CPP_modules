@@ -1,4 +1,4 @@
-NAME		+= convert
+NAME		+= serial
 
 SRCS_DIR	+= ./
 
