@@ -31,7 +31,6 @@ CXXFLAGS	+= -std=c++98
 CXXFLAGS	+= -Wall
 CXXFLAGS	+= -Werror
 CXXFLAGS	+= -Wextra
-CXXFLAGS	+= -Wno-unused-parameter
 
 CPPFLAGS	+= -I $(HDRS_DIR)
 
