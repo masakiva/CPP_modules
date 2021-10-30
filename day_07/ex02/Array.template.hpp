@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 10:37:44 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/30 14:49:05 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/30 14:55:36 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Array
 	private:
 
 		T*			_arr;
-		std::size_t	_size;
+		std::size_t	_arr_size;
 
 	public:
 
@@ -33,7 +33,9 @@ class	Array
 		~Array( void );
 
 		const Array&	operator=( const Array& rhs );
-		T&				operator[]( std::size_t i );
+		T&				operator[]( std::size_t i ) const;
+
+		std::size_t		size( void );
 
 		class	OutOfBoundsException : public std::exception
 		{
