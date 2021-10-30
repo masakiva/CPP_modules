@@ -2,6 +2,7 @@
 *.o
 objects
 a.out*
+easyfind
 # libraries
 *.a
 *.dylib
