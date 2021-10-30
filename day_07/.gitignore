@@ -3,6 +3,8 @@
 objects
 a.out*
 swapminmax
+iter
+array
 # libraries
 *.a
 *.dylib

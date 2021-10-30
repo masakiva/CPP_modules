@@ -1,4 +1,4 @@
-NAME		+= swapminmax
+NAME		+= iter
 
 SRCS_DIR	+= ./
 
@@ -8,9 +8,7 @@ vpath %.c $(SRCS_DIR)
 
 HDRS_DIR	= ./
 
-HDRS		+= swap.template.hpp
-HDRS		+= min.template.hpp
-HDRS		+= max.template.hpp
+HDRS		+= iter.template.hpp
 
 vpath %.h $(HDRS_DIR)
 

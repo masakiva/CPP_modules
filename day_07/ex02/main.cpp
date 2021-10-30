@@ -1,5 +1,6 @@
 #include <iostream>
-#include <Array.hpp>
+#include <cstdlib> // rand, srand
+#include "Array.templatedef.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
