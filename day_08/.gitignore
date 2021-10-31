@@ -3,6 +3,7 @@
 objects
 a.out*
 easyfind
+span
 # libraries
 *.a
 *.dylib
