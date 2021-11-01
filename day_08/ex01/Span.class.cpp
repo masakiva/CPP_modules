@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 17:07:59 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/31 23:32:42 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/11/01 12:04:10 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 Span::Span( void ) {}
 
-Span::Span( unsigned int N )
-{
-	this->_N = N;
-}
+Span::Span( unsigned int N ) : _N(N) { }
 
 Span::Span( const Span& src ) { *this = src; }
 
@@ -49,6 +46,15 @@ void	Span::addNumber( int new_nb )
 
 unsigned int	Span::shortestSpan( void )
 {
+	std::vector<int>	sorted_nbs;
+
+	sorted_nbs = this->_nbs;
+	std::sort( sorted_nbs.begin(), sorted_nbs.end() );
+	for (std::vector<int>::iterator it=sorted_nbs.begin(); it!=sorted_nbs.end(); ++it)
+	{
+		if ( *it - *it + 1 > shortest
+	}
+
 	return ( 1 );
 }
 
