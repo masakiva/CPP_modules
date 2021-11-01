@@ -6,7 +6,7 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 16:59:46 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/31 23:23:30 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/11/01 19:42:07 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,21 @@ class	Span
 		int&	operator[]( unsigned int i );
 
 		void			addNumber( int new_nb );
+		void			addNumber( int range, int new_nb );
+		template < typename T >
+			void			addNumber( T it, T it_end )
+			{
+				for ( ; it != it_end; it++ )
+					this->addNumber( *it );
+			}
 		unsigned int	shortestSpan( void );
 		unsigned int	longestSpan( void );
 
-		class	VectorFullException
+		class	VectorFullException : public std::exception
+		{
+			virtual const char* what() const throw();
+		};
+		class	NotEnoughNumbersException : public std::exception
 		{
 			virtual const char* what() const throw();
 		};
