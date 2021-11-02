@@ -3,13 +3,13 @@ NAME		+= mutantstack
 SRCS_DIR	+= ./
 
 SRCS		+= main.cpp
-SRCS		+= MutantStack.class.cpp
 
 vpath %.c $(SRCS_DIR)
 
 HDRS_DIR	= ./
 
-HDRS		+= MutantStack.class.hpp
+HDRS		+= MutantStack.template.hpp
+HDRS		+= MutantStack.templatedef.hpp
 
 vpath %.h $(HDRS_DIR)
 

@@ -4,6 +4,7 @@ objects
 a.out*
 easyfind
 span
+mutantstack
 # libraries
 *.a
 *.dylib
