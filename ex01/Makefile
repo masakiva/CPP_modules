@@ -21,6 +21,7 @@ OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
 CXX			= clang++
 
+CXXFLAGS	+= -std=c++98
 CXXFLAGS	+= -Wall
 CXXFLAGS	+= -Werror
 CXXFLAGS	+= -Wextra

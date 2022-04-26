@@ -6,12 +6,13 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 13:58:12 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/04 16:25:52 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2021/10/07 14:20:48 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
+#include <cstdlib>
 
 char	*upperify(char *str)
 {
