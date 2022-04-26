@@ -28,10 +28,10 @@ CXXFLAGS	+= -Wextra
 CPPFLAGS	+= -I $(HDRS_DIR)
 
 ifeq ($(d), 0)
-	CFLAGS	+= -Wpadded
-	CFLAGS	+= -g3
-	CFLAGS	+= -fsanitize=address,undefined
-	LDFLAGS	+= -fsanitize=address,undefined
+	CXXFLAGS	+= -Wpadded
+	CXXFLAGS	+= -g3
+	CXXFLAGS	+= -fsanitize=address,undefined
+	LDFLAGS		+= -fsanitize=address,undefined
 endif
 
 all:			$(NAME)
