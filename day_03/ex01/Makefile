@@ -6,7 +6,7 @@ SRCS		+= main.cpp
 SRCS		+= ClapTrap.cpp
 SRCS		+= ScavTrap.cpp
 
-vpath %.c $(SRCS_DIR)
+vpath %.cpp $(SRCS_DIR)
 
 HDRS_DIR	= ./
 

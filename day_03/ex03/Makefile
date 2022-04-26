@@ -8,7 +8,7 @@ SRCS		+= ScavTrap.cpp
 SRCS		+= FragTrap.cpp
 SRCS		+= DiamondTrap.cpp
 
-vpath %.c $(SRCS_DIR)
+vpath %.cpp $(SRCS_DIR)
 
 HDRS_DIR	= ./
 
