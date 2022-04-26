@@ -17,7 +17,7 @@ HDRS		+= ScavTrap.hpp
 HDRS		+= FragTrap.hpp
 HDRS		+= DiamondTrap.hpp
 
-vpath %.h $(HDRS_DIR)
+vpath %.hpp $(HDRS_DIR)
 
 OBJS_DIR	= ./objects/
 

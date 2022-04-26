@@ -13,7 +13,7 @@ HDRS_DIR	= ./
 HDRS		+= ClapTrap.hpp
 HDRS		+= ScavTrap.hpp
 
-vpath %.h $(HDRS_DIR)
+vpath %.hpp $(HDRS_DIR)
 
 OBJS_DIR	= ./objects/
 
