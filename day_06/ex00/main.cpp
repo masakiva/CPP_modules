@@ -6,14 +6,14 @@
 /*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:24:43 by mvidal-a          #+#    #+#             */
-/*   Updated: 2021/10/28 15:20:13 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2022/01/19 16:29:44 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib> // EXIT_SUCCESS, EXIT_FAILURE, atof
 #include <climits> // CHAR_MIN, CHAR_MAX, INT_MIN, INT_MAX
-#include <cstring> // strcmp
+#include <cstring> // strncmp
 
 void	display_char( double double_value, bool is_nan )
 {
