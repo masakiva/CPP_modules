@@ -6,14 +6,14 @@ SRCS		+= main.cpp
 SRCS		+= Bureaucrat.class.cpp
 SRCS		+= Form.class.cpp
 
-vpath %.c $(SRCS_DIR)
+vpath %.cpp $(SRCS_DIR)
 
 HDRS_DIR	= ./
 
 HDRS		+= Bureaucrat.class.hpp
 HDRS		+= Form.class.hpp
 
-vpath %.h $(HDRS_DIR)
+vpath %.hpp $(HDRS_DIR)
 
 OBJS_DIR	= ./objects/
 
@@ -29,10 +29,10 @@ CXXFLAGS	+= -Wextra
 CPPFLAGS	+= -I $(HDRS_DIR)
 
 ifeq ($(d), 0)
-	CFLAGS	+= -Wpadded
-	CFLAGS	+= -g3
-	CFLAGS	+= -fsanitize=address,undefined
-	LDFLAGS	+= -fsanitize=address,undefined
+	CXXFLAGS	+= -Wpadded
+	CXXFLAGS	+= -g3
+	CXXFLAGS	+= -fsanitize=address,undefined
+	LDFLAGS		+= -fsanitize=address,undefined
 endif
 
 all:			$(NAME)
