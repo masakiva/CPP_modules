@@ -7,7 +7,7 @@ SRCS		+= Weapon.cpp
 SRCS		+= HumanA.cpp
 SRCS		+= HumanB.cpp
 
-vpath %.c $(SRCS_DIR)
+vpath %.cpp $(SRCS_DIR)
 
 HDRS_DIR	= ./
 

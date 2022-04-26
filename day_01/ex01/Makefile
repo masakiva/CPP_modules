@@ -6,7 +6,7 @@ SRCS		+= main.cpp
 SRCS		+= Zombie.cpp
 SRCS		+= ZombieHorde.cpp
 
-vpath %.c $(SRCS_DIR)
+vpath %.cpp $(SRCS_DIR)
 
 HDRS_DIR	= ./
 
