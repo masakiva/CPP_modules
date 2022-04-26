@@ -5,7 +5,7 @@ SRCS_DIR	+= ./
 SRCS		+= Account.cpp
 SRCS		+= tests.cpp
 
-vpath %.c $(SRCS_DIR)
+vpath %.cpp $(SRCS_DIR)
 
 HDRS_DIR	= ./
 

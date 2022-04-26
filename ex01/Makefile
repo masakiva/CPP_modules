@@ -6,7 +6,7 @@ SRCS		+= main.cpp
 SRCS		+= Phonebook.class.cpp
 SRCS		+= Contact.class.cpp
 
-vpath %.c $(SRCS_DIR)
+vpath %.cpp $(SRCS_DIR)
 
 HDRS_DIR	= ./
 
