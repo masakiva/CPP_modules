@@ -15,7 +15,7 @@ HDRS		+= Weapon.hpp
 HDRS		+= HumanA.hpp
 HDRS		+= HumanB.hpp
 
-vpath %.h $(HDRS_DIR)
+vpath %.hpp $(HDRS_DIR)
 
 OBJS_DIR	= ./objects/
 

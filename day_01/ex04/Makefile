@@ -10,7 +10,7 @@ HDRS_DIR	= ./
 
 #HDRS		+= header.hpp
 
-vpath %.h $(HDRS_DIR)
+vpath %.hpp $(HDRS_DIR)
 
 OBJS_DIR	= ./objects/
 
