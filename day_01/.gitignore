@@ -1,0 +1,29 @@
+# binary stuff
+*.o
+objects
+a.out*
+BraiiiiiiinnnzzzZ
+moarbrainz
+HITHISISBRAIN
+unnecessaryviolence
+replace
+Karen2.0
+karenFilter
+# libraries
+*.a
+*.dylib
+*.swiftdoc
+*.swiftmodule
+
+# macos garbage
+.DS_Store
+
+# vim utils
+*.swp
+*.vim
+
+# ctags
+tags
+
+# debug
+.gdb_history
